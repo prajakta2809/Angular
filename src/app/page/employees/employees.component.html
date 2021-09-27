@@ -1,0 +1,39 @@
+<p>List of Persons</p>
+<!-- <table class="table">
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+    </thead>
+    <body>
+        <tr *ngFor="let employee of employees">
+        <td>{{employee.id}}</td>
+
+        <td>{{employee.name}}</td>
+        <td>{{employee.email}}</td>
+    </tr>
+    </body>
+</table> -->
+<button class="btn btn-primary" routerLink="employee/add/0">Add Employee</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col"></th>
+          </tr>
+      <tr *ngFor="let employee of employees">
+        <th scope="col">{{employee.id}}</th>
+        <th scope="col">{{employee.name}}</th>
+        <th scope="col">{{employee.email}}</th>
+        
+        <th><a [routerLink]="['employee/edit',employee.id]">Edit</a></th>
+        <th><button (click)="onDelete(employee.id)">Delete</button></th>
+      </tr>
+    </thead>
+    <tbody>
+      
+     
+    </tbody>
+  </table>
